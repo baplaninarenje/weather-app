@@ -8,6 +8,49 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <h1>Weather Forecast</h1>
+    <form novalidate data-form-user>
+      <div class="form-item">
+        <label for="location">Choose a location</label>
+        <input
+          required
+          placeholder="Locations can be addresses, partial addresses or latitude,longitude values."
+          title="Locations can be addresses, partial addresses or latitude,longitude values."
+          name="location"
+          id="location"
+          data-location
+        />
+      </div>
+      <div class="form-item">
+        <label for="date">Choose a date</label>
+        <input type="date" name="date" id="date" data-date />
+      </div>
+      <div class="form-item">
+        <label for="units"
+          >Please select your system of units used for the output data:</label
+        >
+        <select name="units" id="units">
+          <option value="metric" selected>Celsius</option>
+          <option value="us">Fahrenheit</option>
+        </select>
+      </div>
+      <button data-get-weather-data type="button">Get Weather Data</button>
+    </form>
+    <section data-content></section>
+    <p data-error></p>
+    <div data-loader></div>
+    <template data-template-weather-info>
+      <div data-weather-container>
+        <h2>
+          Weather Forecast for the location: <span data-location-name></span>
+        </h2>
+        <p>Conditions: <span data-conditions></span></p>
+        <p>Humidity: <span data-humidity></span></p>
+        <p>Pressure: <span data-pressure></span></p>
+        <p>Temp: <span data-temp></span></p>
+        <p>UV Index: <span data-uvindex></span></p>
+      </div>
+    </template>
     <script src="index.js"></script>
   </body>
 </html>
